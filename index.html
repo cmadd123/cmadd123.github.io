@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conscious Mama</title>
+    <script>
+        // Redirect shared links to the app or app store
+        const path = window.location.pathname;
+        if (path.startsWith('/shared/')) {
+            const code = path.substring('/shared/'.length);
+            // Try to open the app
+            window.location.href = 'consciousmama://shared/' + code;
+            // Fallback to app store after a delay
+            setTimeout(function() {
+                // You can update this to your Play Store URL when published
+                window.location.href = 'https://cmadd123.github.io/consciousmama.github.io/';
+            }, 2000);
+        }
+    </script>
+</head>
+<body>
+    <h1>Redirecting to Conscious Mama...</h1>
+    <p>If the app doesn't open, <a href="https://cmadd123.github.io/consciousmama.github.io/">visit our website</a>.</p>
+</body>
+</html>
